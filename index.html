@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lover Paint | Paint Your Memories – Handcrafted Custom Portraits & Fine Art</title>
+  
+  <meta name="description" content="Lover Paint transforms your cherished personal photos into timeless hand-painted oil, watercolor, and canvas masterpieces. Luxury custom portraits for couples, families, and meaningful gifts.">
+  <meta name="keywords" content="custom portraits, hand-painted portrait from photo, couple painting, family portrait painting, oil painting commission, Lover Paint, personalized canvas art">
+  <meta name="theme-color" content="#FAF7F2">
+  <meta property="og:title" content="Lover Paint | Paint Your Memories">
+  <meta property="og:description" content="Transform your favorite moments into timeless hand-painted masterpieces. 100% human-crafted oil and watercolor portraits on museum-grade canvas.">
+  <meta property="og:image" content="assets/logo.png">
+
+  <!-- Google Fonts: Editorial Serif, Modern Sans & Majestic Arabic Calligraphy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="intro-active">
+
+  <!-- Custom Luxury Art Cursor -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- ========================================================
+       1. CINEMATIC INTRO EXPERIENCE (Full-Screen Canvas & Logo Reveal)
+       ======================================================== -->
+  <section class="intro-overlay" id="introOverlay" aria-label="Lover Paint Cinematic Intro">
+    <!-- Floating Paint Particles Canvas -->
+    <canvas id="introCanvas" class="intro-particles-canvas"></canvas>
+    
+    <!-- Artistic Textured Background Layer -->
+    <div class="intro-art-texture"></div>
+
+    <!-- Skip Intro Option -->
+    <button class="skip-intro-btn" id="skipIntroBtn" type="button" aria-label="Skip Introduction">
+      <span data-i18n="intro_skip">Skip Intro</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 4 15 12 5 20 5 4"></polygon>
+        <line x1="19" y1="5" x2="19" y2="19"></line>
+      </svg>
+    </button>
+
+    <!-- Intro Centerpiece Content -->
+    <div class="intro-content-wrapper">
+      
+      <!-- Animated Paint Brush Stroke Frame around Logo -->
+      <div class="logo-brush-container">
+        <!-- SVG Stroke Path Animation -->
+        <svg class="brush-stroke-svg" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke-ring-back" cx="170" cy="170" r="145" stroke="rgba(217, 119, 98, 0.15)" stroke-width="2" />
+          <path class="stroke-brush-gold" d="M170,18 C250,18 318,85 318,170 C318,255 250,322 170,322 C90,322 22,255 22,170 C22,95 80,26 155,20" stroke="url(#goldGradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="980" stroke-dashoffset="980" />
+          <path class="stroke-brush-rose" d="M300,120 C325,190 280,270 200,305 C120,340 45,280 30,195 C15,110 85,35 175,30" stroke="url(#roseGradient)" stroke-width="3" stroke-linecap="round" stroke-dasharray="950" stroke-dashoffset="950" />
+          <defs>
+            <linearGradient id="goldGradient" x1="0" y1="0" x2="340" y2="340" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#D4AF37" />
+              <stop offset="50%" stop-color="#F3E5AB" />
+              <stop offset="100%" stop-color="#C5A059" />
+            </linearGradient>
+            <linearGradient id="roseGradient" x1="340" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E29578" />
+              <stop offset="50%" stop-color="#C85A43" />
+              <stop offset="100%" stop-color="#D97762" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Ambient Glow Aura -->
+        <div class="logo-ambient-glow"></div>
+
+        <!-- Official Lover Paint Logo -->
+        <div class="intro-logo-box">
+          <img src="assets/logo.png" alt="Lover Paint Art Studio Logo" class="intro-logo-image" id="introLogoImg">
+        </div>
+      </div>
+
+      <!-- Tagline & Narrative -->
+      <div class="intro-narrative">
+        <p class="intro-atelier-label" data-i18n="intro_label">FINE ART ATELIER</p>
+        <h2 class="intro-poetic-tagline">
+          <span class="line-reveal" data-i18n="intro_line1">Every Face Has a Story.</span>
+          <span class="line-reveal" data-i18n="intro_line2">Every Painting Keeps It Forever.</span>
+        </h2>
+        <p class="intro-sub-tagline" data-i18n="intro_sub">Paint Your Memories</p>
+      </div>
+
+      <!-- Explore Button -->
+      <div class="intro-cta-wrapper">
+        <button class="explore-art-btn" id="exploreArtBtn" type="button">
+          <span class="btn-text" data-i18n="intro_btn">EXPLORE THE ART</span>
+          <span class="btn-brush-sheen"></span>
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Cinematic Curtain Wipe Element -->
+    <div class="cinematic-wipe" id="cinematicWipe"></div>
+  </section>
+
+
+  <!-- ========================================================
+       2. NAVIGATION HEADER
+       ======================================================== -->
+  <header class="luxury-navbar" id="mainHeader">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-link" aria-label="Lover Paint Home">
+        <img src="assets/logo.png" alt="Lover Paint" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-title">Lover Paint</span>
+          <span class="brand-subtitle" data-i18n="nav_brand_sub">Fine Art Atelier</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#custom-portrait" class="nav-link" data-i18n="nav_custom">Custom Portraits</a></li>
+          <li><a href="#process" class="nav-link" data-i18n="nav_process">Our Process</a></li>
+          <li><a href="#why-us" class="nav-link" data-i18n="nav_why">Why Lover Paint</a></li>
+          <li><a href="#testimonials" class="nav-link" data-i18n="nav_stories">Stories</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Sizing & Pricing</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Bilingual Language Switcher -->
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Toggle Language / تبديل اللغة" title="Switch Language / تبديل اللغة">
+          <span class="lang-opt" id="langOptEn">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-opt" id="langOptAr">عربي</span>
+        </button>
+
+        <!-- Replay Intro Button -->
+        <button class="icon-nav-btn" id="replayIntroBtn" type="button" title="Replay Cinematic Intro" aria-label="Replay Cinematic Intro">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+          <span class="replay-label" data-i18n="nav_intro_btn">Intro</span>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#custom-portrait" class="nav-cta-btn">
+          <span data-i18n="nav_cta">Turn Photo Into Art</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="drawer-inner">
+        <div class="drawer-header">
+          <div class="drawer-brand">
+            <img src="assets/logo.png" alt="Lover Paint" class="drawer-logo">
+            <span>Lover Paint</span>
+          </div>
+          <div class="drawer-header-actions">
+            <!-- Mobile Language Switcher -->
+            <button class="lang-toggle-btn mini" id="mobileLangToggleBtn" type="button" aria-label="Toggle Language / تبديل اللغة">
+              <span class="lang-opt" id="mobileLangOptEn">EN</span>
+              <span class="lang-divider">|</span>
+              <span class="lang-opt" id="mobileLangOptAr">عربي</span>
+            </button>
+            <button class="drawer-close-btn" id="drawerCloseBtn" type="button" aria-label="Close Menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="mobile-nav-links">
+          <li><a href="#gallery" class="mobile-link"><span class="link-num">01</span> <span data-i18n="nav_gallery">Artwork Gallery</span></a></li>
+          <li><a href="#custom-portrait" class="mobile-link"><span class="link-num">02</span> <span data-i18n="nav_custom">Custom Portraits</span></a></li>
+          <li><a href="#process" class="mobile-link"><span class="link-num">03</span> <span data-i18n="nav_process">Our 4-Step Process</span></a></li>
+          <li><a href="#why-us" class="mobile-link"><span class="link-num">04</span> <span data-i18n="nav_why">Why Lover Paint</span></a></li>
+          <li><a href="#testimonials" class="mobile-link"><span class="link-num">05</span> <span data-i18n="nav_stories">Collector Stories</span></a></li>
+          <li><a href="#pricing" class="mobile-link"><span class="link-num">06</span> <span data-i18n="nav_pricing">Sizing & Pricing</span></a></li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I%20would%20love%20to%20turn%20my%20photo%20into%20a%20hand-painted%20masterpiece." target="_blank" rel="noopener noreferrer" class="mobile-whatsapp-btn" id="mobileWhatsappLink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 1.838.815 2.791.815 3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.767-5.768-5.767zm0 10.422c-.868 0-1.636-.242-2.348-.689l-.168-.106-1.577.414.421-1.538-.114-.183c-.512-.816-.782-1.639-.781-2.554.001-2.569 2.09-4.658 4.66-4.658 2.568 0 4.658 2.089 4.658 4.658 0 2.57-2.09 4.658-4.658 4.658zm7.969-4.656c0 4.418-3.582 8-8 8-1.408 0-2.733-.365-3.882-1.002l-4.118 1.08 1.1-4.017c-.707-1.189-1.1-2.57-1.1-4.061 0-4.418 3.582-8 8-8s8 3.582 8 8z"/>
+            </svg>
+            <span data-i18n="mobile_chat_btn">Chat on WhatsApp</span>
+          </a>
+          <button class="mobile-replay-intro" id="mobileReplayIntro">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span data-i18n="mobile_replay_intro">Replay Cinematic Intro</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="mainContent">
+
+    <!-- ========================================================
+         3. HERO SECTION
+         ======================================================== -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Decorative Background Elements -->
+      <div class="hero-art-splatter splatter-1"></div>
+      <div class="hero-art-splatter splatter-2"></div>
+      <div class="hero-glow-back"></div>
+
+      <div class="hero-container">
+        
+        <!-- Left: Editorial Content -->
+        <div class="hero-content" data-reveal="fade-up">
+          <div class="hero-badge">
+            <span class="badge-icon">✦</span>
+            <span class="badge-text" data-i18n="hero_badge">Luxury Handcrafted Portrait Atelier</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span data-i18n="hero_title_1">Your Memories,</span> <br>
+            <span class="serif-flourish" data-i18n="hero_title_2">Turned Into Art.</span>
+          </h1>
+
+          <p class="hero-subtext" data-i18n="hero_subtext">
+            Transform your favorite moments into timeless hand-painted masterpieces. 
+            Crafted with oil, watercolor, and archival pigments on museum-grade Belgian linen canvas.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#gallery" class="btn-primary">
+              <span data-i18n="hero_btn_gallery">Explore Our Gallery</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            
+            <a href="#custom-portrait" class="btn-secondary">
+              <span class="btn-brush-icon">🖌️</span>
+              <span data-i18n="hero_btn_create">Create Your Portrait</span>
+            </a>
+          </div>
+
+          <!-- Social Proof & Trust Badges -->
+          <div class="hero-trust-bar">
+            <div class="trust-stat">
+              <span class="trust-number" data-i18n="hero_stat_1_num">2,400+</span>
+              <span class="trust-label" data-i18n="hero_stat_1_lbl">Heirlooms Painted</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <span class="trust-number" data-i18n="hero_stat_2_num">100%</span>
+              <span class="trust-label" data-i18n="hero_stat_2_lbl">Handcrafted by Artists</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <div class="stars">★★★★★</div>
+              <span class="trust-label" data-i18n="hero_stat_3_lbl">4.9/5 Collector Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Layered Visual Artwork Showcase (Parallax Framed Artworks) -->
+        <div class="hero-visual-stage" id="heroVisualStage">
+          
+          <!-- Main Hero Frame: Couple Romantic Masterpiece -->
+          <div class="master-frame-wrapper" data-parallax="0.04">
+            <div class="luxury-art-frame">
+              <div class="frame-bevel">
+                <div class="frame-canvas">
+                  <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=85" alt="Handcrafted Oil Painting of Romantic Couple" class="hero-art-img">
+                  <div class="canvas-paint-sheen"></div>
+                </div>
+              </div>
+              <!-- Floating Museum Nameplate -->
+              <div class="museum-plaque">
+                <span class="plaque-title" data-i18n="hero_plaque_title">"Golden Hour Vows"</span>
+                <span class="plaque-spec" data-i18n="hero_plaque_spec">Oil on Belgian Linen • 28" × 36"</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Overlapping Art Frame: Watercolor Portrait -->
+          <div class="secondary-art-frame floating-frame-1" data-parallax="-0.06">
+            <div class="mini-frame">
+              <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80" alt="Watercolor Fine Art Portrait" class="mini-frame-img">
+              <div class="mini-badge" data-i18n="badge_watercolor">Watercolor</div>
+            </div>
+          </div>
+
+          <!-- Tertiary Floating Element: Artist Palette & Brush Seal -->
+          <div class="atelier-seal-card floating-card" data-parallax="0.08">
+            <div class="seal-icon">✨</div>
+            <div class="seal-content">
+              <strong data-i18n="hero_seal_title">Museum Archival</strong>
+              <span data-i18n="hero_seal_sub">100-Year Canvas Guarantee</span>
+            </div>
+          </div>
+
+          <!-- Artistic Brushstroke Flourish Decor -->
+          <div class="hero-brush-flourish"></div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#gallery" class="scroll-down-hint" aria-label="Scroll to gallery">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="scroll-text" data-i18n="hero_scroll_hint">Scroll to Immerse</span>
+      </a>
+    </section>
+
+
+    <!-- ========================================================
+         4. ARTWORK GALLERY (Masonry with Filters & Lightbox)
+         ======================================================== -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-container">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="gallery_eyebrow">CURATED COLLECTION</p>
+          <h2 class="section-title" data-i18n="gallery_title">The Masterpiece Gallery</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="gallery_subtitle">
+            Explore a curated selection of bespoke portraits and hand-painted canvases crafted with meticulous passion for our collectors worldwide.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="gallery-filter-bar" data-reveal="fade-up" role="tablist" aria-label="Gallery Categories">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span data-i18n="filter_all">All Artworks</span>
+            <span class="filter-count">12</span>
+          </button>
+          <button class="filter-btn" data-filter="portraits" role="tab" aria-selected="false">
+            <span data-i18n="filter_portraits">Portraits</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button class="filter-btn" data-filter="couples" role="tab" aria-selected="false">
+            <span data-i18n="filter_couples">Couples</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button class="filter-btn" data-filter="family" role="tab" aria-selected="false">
+            <span data-i18n="filter_family">Family</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button class="filter-btn" data-filter="watercolor" role="tab" aria-selected="false">
+            <span data-i18n="filter_watercolor">Watercolor</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button class="filter-btn" data-filter="canvas-art" role="tab" aria-selected="false">
+            <span data-i18n="filter_canvas">Canvas Art</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button class="filter-btn" data-filter="custom-gifts" role="tab" aria-selected="false">
+            <span data-i18n="filter_gifts">Custom Gifts</span>
+            <span class="filter-count">3</span>
+          </button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- Item 1: Couples / Canvas Art -->
+          <article class="gallery-item" data-category="couples canvas-art" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=85" alt="Golden Hour Embrace Oil Painting" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Couples</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Golden Hour Embrace</h3>
+                <p class="art-medium">Oil on stretched Belgian linen • 24" × 36"</p>
+                <p class="art-story">Rendered from an evening sunset photograph, capturing rich warmth and delicate light in classical impasto strokes.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2: Portraits / Canvas Art -->
+          <article class="gallery-item" data-category="portraits canvas-art" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=900&q=85" alt="Portrait of Eleanor Fine Art Oil" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Portraits</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">The Matriarch’s Grace</h3>
+                <p class="art-medium">Layered Oil Glazing on Canvas • 20" × 28"</p>
+                <p class="art-story">A poignant heirloom painted in tribute to an 80th milestone, with soft Venetian tones and soulful eye reflection.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3: Watercolor / Custom Gifts -->
+          <article class="gallery-item" data-category="watercolor custom-gifts" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85" alt="Whispering Wildflowers Watercolor Portrait" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Watercolor</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Whispering Wildflowers</h3>
+                <p class="art-medium">French Arches 300gsm Cold-Pressed • 16" × 20"</p>
+                <p class="art-story">Gentle wet-on-wet pigments blending natural garden tones with ethereal floral blooms.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4: Family / Canvas Art -->
+          <article class="gallery-item" data-category="family canvas-art" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=85" alt="Generations of Joy Family Canvas Art" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Family</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Generations of Grace</h3>
+                <p class="art-medium">Fine Art Oil on Italian Linen • 30" × 40"</p>
+                <p class="art-story">Three generations unified into a single harmonious composition with seamless artistic staging.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5: Couples / Watercolor -->
+          <article class="gallery-item" data-category="couples watercolor" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=900&q=85" alt="Vows by the Tuscan Coast Watercolor" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Couples</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Vows Under Tuscan Skies</h3>
+                <p class="art-medium">Pure Artist Pigments on Heavyweight Cotton • 18" × 24"</p>
+                <p class="art-story">Wedding destination portrait capturing joyful movement, billowing linen, and warm Italian light.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6: Portraits / Custom Gifts -->
+          <article class="gallery-item" data-category="portraits custom-gifts" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=900&q=85" alt="The Young Dreamer Child Portrait" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Portraits</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">The Young Dreamer</h3>
+                <p class="art-medium">Oil & Gold Leaf Accents • 20" × 24"</p>
+                <p class="art-story">Expressive brush strokes preserving the spark of childhood curiosity with luminous gilded highlights.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 7: Couples / Custom Gifts -->
+          <article class="gallery-item" data-category="couples custom-gifts" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=900&q=85" alt="First Dance in Indigo Oil Portrait" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Custom Gifts</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">First Dance in Indigo</h3>
+                <p class="art-medium">Monochrome & Warm Ochre Oil • 24" × 30"</p>
+                <p class="art-story">An exquisite first-anniversary surprise hand-painted from a dimly lit reception phone snapshot.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8: Family / Portraits -->
+          <article class="gallery-item" data-category="family portraits" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=900&q=85" alt="Summer Lakeside Family Portrait" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Family</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Summer by the Lake</h3>
+                <p class="art-medium">Classical Oil on Linen • 28" × 38"</p>
+                <p class="art-story">Preserving a treasured holiday gathering with vibrant emerald hues and sparkling water highlights.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 9: Watercolor / Portraits -->
+          <article class="gallery-item" data-category="watercolor portraits" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=900&q=85" alt="Serenade in Sepia Fine Art Watercolor" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Watercolor</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Serenade in Sepia</h3>
+                <p class="art-medium">Granulating Watercolors on Cotton • 14" × 18"</p>
+                <p class="art-story">Subtle earth minerals creating organic texture and nostalgia reminiscent of 19th-century salon art.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 10: Canvas Art / Couples -->
+          <article class="gallery-item" data-category="canvas-art couples" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" alt="Studio Atelier Session Canvas" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Canvas Art</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Harmony in Rose & Ochre</h3>
+                <p class="art-medium">Heavy Body Acrylic & Oil • 30" × 30"</p>
+                <p class="art-story">Rich tactile brushwork celebrating warmth, togetherness, and tactile textural presence.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 11: Family / Canvas Art -->
+          <article class="gallery-item" data-category="family canvas-art" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=85" alt="Ancestral Love Family Canvas" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Canvas Art</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Ancestral Love</h3>
+                <p class="art-medium">Archival Stretched Linen • 36" × 48"</p>
+                <p class="art-story">Grand centerpiece commissioned for a family estate dining room, uniting heritage and modern warmth.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 12: Custom Gifts / Portraits -->
+          <article class="gallery-item" data-category="custom-gifts portraits" data-reveal="fade-up">
+            <div class="gallery-card">
+              <div class="art-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=900&q=85" alt="Forever in Bloom Custom Gift Painting" class="gallery-art-img" loading="lazy">
+                <div class="art-overlay">
+                  <div class="overlay-actions">
+                    <button class="lightbox-trigger-btn" aria-label="View artwork details">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <span class="card-category-pill">Custom Gifts</span>
+              </div>
+              <div class="art-details">
+                <h3 class="art-title">Forever in Bloom</h3>
+                <p class="art-medium">Hand-Painted Oil on Fine Wood Panel • 12" × 16"</p>
+                <p class="art-story">Presented in a velvet presentation case with hand-lettered gold calligraphy tribute on the reverse.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         5. CUSTOM PORTRAIT SECTION (Interactive Before & After Slider)
+         ======================================================== -->
+    <section class="custom-portrait-section" id="custom-portrait">
+      <div class="section-container">
+        
+        <div class="portrait-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="custom_eyebrow">THE TRANSFORMATION</p>
+          <h2 class="section-title" data-i18n="custom_title">Your Photo. Our Art. A Memory Forever.</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="custom_sub">
+            Slide across to experience how our master portrait artists take ordinary photographs and elevate them into breathtaking fine art heirlooms filled with emotion, soul, and timeless beauty.
+          </p>
+        </div>
+
+        <!-- Before & After Comparison Showcase -->
+        <div class="comparison-showcase" data-reveal="fade-up">
+          
+          <div class="before-after-container" id="beforeAfterSlider">
+            
+            <!-- Original Photograph (Underneath / Left Reveal) -->
+            <div class="image-layer photo-layer">
+              <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=85" alt="Customer's Original Photograph" class="layer-img">
+              <span class="comparison-tag tag-photo">
+                <span class="dot"></span>
+                <span data-i18n="tag_photo">Original Customer Photo</span>
+              </span>
+            </div>
+
+            <!-- Hand-Painted Artwork (Top / Cropped by slider) -->
+            <div class="image-layer art-layer" id="artLayerClip">
+              <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85" alt="Lover Paint Handcrafted Portrait Painting" class="layer-img">
+              <div class="paint-texture-overlay"></div>
+              <span class="comparison-tag tag-art">
+                <span class="dot"></span>
+                <span data-i18n="tag_art">Lover Paint Masterpiece</span>
+              </span>
+            </div>
+
+            <!-- Draggable Divider Line & Golden Brush Handle -->
+            <div class="slider-divider" id="sliderDivider">
+              <div class="divider-handle">
+                <div class="handle-brush-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+                <span class="handle-pulse"></span>
+              </div>
+            </div>
+
+            <!-- Interactive Helper Hint -->
+            <div class="slider-hint" data-i18n="slider_hint">Drag handle or click anywhere to compare</div>
+
+          </div>
+
+          <!-- Quick Toggle Buttons -->
+          <div class="slider-quick-controls">
+            <button class="slider-quick-btn" id="btnShowPhoto" type="button" data-i18n="btn_photo">Show Photo</button>
+            <button class="slider-quick-btn active" id="btnShowHalf" type="button" data-i18n="btn_half">50 / 50 Split</button>
+            <button class="slider-quick-btn" id="btnShowPainting" type="button" data-i18n="btn_art">Show Painting</button>
+          </div>
+
+          <!-- Feature Highlights of Custom Portraits -->
+          <div class="portrait-highlights-grid">
+            <div class="highlight-item">
+              <div class="highlight-num">01</div>
+              <h4 data-i18n="highlight_1_title">Flawless Artist Expression</h4>
+              <p data-i18n="highlight_1_desc">We eliminate phone flash harshness, enhance natural skin tones, and bring out deep warmth in every subject's eyes.</p>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">02</div>
+              <h4 data-i18n="highlight_2_title">Bespoke Artistic Backgrounds</h4>
+              <p data-i18n="highlight_2_desc">Distracting backgrounds are replaced with rich painterly vignettes, impressionist hues, or romantic gold-leaf textures.</p>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">03</div>
+              <h4 data-i18n="highlight_3_title">Combine Separate Photos</h4>
+              <p data-i18n="highlight_3_desc">Have cherished loved ones in separate pictures? Our artists can gracefully compose them together into one family heirloom.</p>
+            </div>
+          </div>
+
+          <!-- Main Call to Action for Custom Portrait -->
+          <div class="portrait-cta-box text-center">
+            <h3 class="cta-box-headline" data-i18n="custom_cta_title">Ready to Immortalize Your Favorite Memory?</h3>
+            <p class="cta-box-sub" data-i18n="custom_cta_sub">Send us your photo directly via WhatsApp for a personalized preview and complimentary artist consultation.</p>
+            
+            <div class="cta-buttons-wrap">
+              <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I%20would%20love%20to%20turn%20my%20photo%20into%20a%20hand-painted%20masterpiece.%20Could%20you%20please%20guide%20me%20through%20options%20and%20pricing?" target="_blank" rel="noopener noreferrer" class="whatsapp-cta-btn" id="customWhatsappBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 1.838.815 2.791.815 3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.767-5.768-5.767zm0 10.422c-.868 0-1.636-.242-2.348-.689l-.168-.106-1.577.414.421-1.538-.114-.183c-.512-.816-.782-1.639-.781-2.554.001-2.569 2.09-4.658 4.66-4.658 2.568 0 4.658 2.089 4.658 4.658 0 2.57-2.09 4.658-4.658 4.658zm7.969-4.656c0 4.418-3.582 8-8 8-1.408 0-2.733-.365-3.882-1.002l-4.118 1.08 1.1-4.017c-.707-1.189-1.1-2.57-1.1-4.061 0-4.418 3.582-8 8-8s8 3.582 8 8z"/>
+                </svg>
+                <span data-i18n="btn_turn_photo">Turn My Photo Into Art</span>
+              </a>
+
+              <button class="open-inquiry-modal-btn" id="openInquiryBtn" type="button">
+                <span data-i18n="btn_request_quote">Request Custom Quote & Mockup</span>
+              </button>
+            </div>
+            
+            <p class="cta-micro-guarantee" data-i18n="custom_guarantee">🔒 No payment required upfront • 100% Satisfaction Guarantee • Unlimited Digital Revisions</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         6. OUR PROCESS (4-Step Illustrated Journey)
+         ======================================================== -->
+    <section class="process-section" id="process">
+      <div class="section-container">
+        
+        <div class="section-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="process_eyebrow">EFFORTLESS CREATION</p>
+          <h2 class="section-title" data-i18n="process_title">The Masterpiece Journey</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="process_subtitle">
+            From a simple smartphone snap to an opulent museum-grade canvas on your wall, our process is designed to be joyful, collaborative, and entirely transparent.
+          </p>
+        </div>
+
+        <div class="process-steps-grid">
+          
+          <!-- Step 01 -->
+          <div class="process-step-card" data-reveal="fade-up">
+            <div class="step-num-watermark">01</div>
+            <div class="step-icon-box">
+              <span class="step-icon">📸</span>
+            </div>
+            <div class="step-content">
+              <span class="step-pill" data-i18n="step_1_pill">Step 01</span>
+              <h3 class="step-title" data-i18n="step_1_title">Choose Your Photo</h3>
+              <p class="step-desc" data-i18n="step_1_desc">
+                Select your favorite portrait, wedding picture, or childhood memory. Even low-resolution or vintage photos can be restored and reimagined by our artists.
+              </p>
+              <ul class="step-features">
+                <li data-i18n="step_1_f1">Instant photo evaluation</li>
+                <li data-i18n="step_1_f2">Option to merge multiple photos</li>
+                <li data-i18n="step_1_f3">Free digital preview advice</li>
+              </ul>
+            </div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="process-step-card" data-reveal="fade-up" data-delay="150">
+            <div class="step-num-watermark">02</div>
+            <div class="step-icon-box">
+              <span class="step-icon">🎨</span>
+            </div>
+            <div class="step-content">
+              <span class="step-pill" data-i18n="step_2_pill">Step 02</span>
+              <h3 class="step-title" data-i18n="step_2_title">Select Your Art Style</h3>
+              <p class="step-desc" data-i18n="step_2_desc">
+                Select the medium that speaks to your heart: Rich Textural Oil, Ethereal Watercolor, Expressive Charcoal, or Contemporary Palette Knife Acrylic.
+              </p>
+              <ul class="step-features">
+                <li data-i18n="step_2_f1">Classical Oil or Modern Impressionism</li>
+                <li data-i18n="step_2_f2">Custom canvas sizes from 12" to 60"</li>
+                <li data-i18n="step_2_f3">Handcrafted framing selections</li>
+              </ul>
+            </div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="process-step-card" data-reveal="fade-up" data-delay="300">
+            <div class="step-num-watermark">03</div>
+            <div class="step-icon-box">
+              <span class="step-icon">🖌️</span>
+            </div>
+            <div class="step-content">
+              <span class="step-pill" data-i18n="step_3_pill">Step 03</span>
+              <h3 class="step-title" data-i18n="step_3_title">Artists Create Your Painting</h3>
+              <p class="step-desc" data-i18n="step_3_desc">
+                Your designated master painter begins stroke-by-stroke. You will receive high-resolution progress photos to request unlimited adjustments before varnish.
+              </p>
+              <ul class="step-features">
+                <li data-i18n="step_3_f1">100% real human brushwork</li>
+                <li data-i18n="step_3_f2">Work-in-progress approvals</li>
+                <li data-i18n="step_3_f3">Unlimited revisions until perfect</li>
+              </ul>
+            </div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="process-step-card" data-reveal="fade-up" data-delay="450">
+            <div class="step-num-watermark">04</div>
+            <div class="step-icon-box">
+              <span class="step-icon">🎁</span>
+            </div>
+            <div class="step-content">
+              <span class="step-pill" data-i18n="step_4_pill">Step 04</span>
+              <h3 class="step-title" data-i18n="step_4_title">Receive Your Masterpiece</h3>
+              <p class="step-desc" data-i18n="step_4_desc">
+                Sealed with protective UV varnish, framed to perfection, and packaged inside a signature luxury presentation case with a signed Certificate of Authenticity.
+              </p>
+              <ul class="step-features">
+                <li data-i18n="step_4_f1">Insured worldwide priority delivery</li>
+                <li data-i18n="step_4_f2">Ready-to-hang museum hardware</li>
+                <li data-i18n="step_4_f3">Signed Certificate of Authenticity</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Medium Style Showcase Tabs -->
+        <div class="medium-showcase-box" data-reveal="fade-up">
+          <div class="medium-tabs-header">
+            <h4 data-i18n="mediums_title">Available Painting Mediums</h4>
+            <div class="medium-pills">
+              <span class="pill active" data-i18n="med_oil">Fine Oil on Linen</span>
+              <span class="pill" data-i18n="med_water">Ethereal Watercolor</span>
+              <span class="pill" data-i18n="med_acrylic">Palette Knife Acrylic</span>
+              <span class="pill" data-i18n="med_charcoal">Vintage Charcoal & Gold</span>
+            </div>
+          </div>
+          <div class="medium-description-text" data-i18n="mediums_desc">
+            "Our Classical Oil paintings are crafted layer upon layer using pure cold-pressed linseed oils and lightfast mineral pigments on heavyweight Belgian linen, ensuring rich luminescence that deepens over generations."
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         7. WHY LOVER PAINT (5 Luxury Pillars)
+         ======================================================== -->
+    <section class="why-us-section" id="why-us">
+      <div class="section-container">
+        
+        <div class="section-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="why_eyebrow">THE LOVER PAINT PROMISE</p>
+          <h2 class="section-title" data-i18n="why_title">Why Connoisseurs Choose Our Atelier</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="why_subtitle">
+            We reject mass production and instant digital filters. Every portrait we create is an authentic work of fine art born from patience, mastery, and reverence for your story.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="pillar-card" data-reveal="fade-up">
+            <div class="pillar-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar_1_title">100% Handcrafted Artwork</h3>
+            <p class="pillar-text" data-i18n="pillar_1_desc">
+              Zero algorithms, zero digital shortcuts. Every contour, highlight, and emotional nuance is hand-painted by classically trained portrait painters with decades of studio experience.
+            </p>
+            <span class="pillar-accent-tag" data-i18n="pillar_1_tag">Master Brushwork</span>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card" data-reveal="fade-up" data-delay="100">
+            <div class="pillar-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar_2_title">Personalized Custom Designs</h3>
+            <p class="pillar-text" data-i18n="pillar_2_desc">
+              Your imagination is our canvas. Custom dimensions, bespoke color palettes harmonized to your home decor, personalized dedication inscriptions, and creative photo combinations.
+            </p>
+            <span class="pillar-accent-tag" data-i18n="pillar_2_tag">Tailored to You</span>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card" data-reveal="fade-up" data-delay="200">
+            <div class="pillar-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar_3_title">Museum-Grade Quality</h3>
+            <p class="pillar-text" data-i18n="pillar_3_desc">
+              We exclusively use fine Belgian Claessens linen, solid European oak stretcher bars, and lightfast mineral pigments rated to endure for 100+ years without yellowing or fading.
+            </p>
+            <span class="pillar-accent-tag" data-i18n="pillar_3_tag">Archival Grade</span>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-card" data-reveal="fade-up" data-delay="300">
+            <div class="pillar-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar_4_title">Meaningful Emotional Gifts</h3>
+            <p class="pillar-text" data-i18n="pillar_4_desc">
+              The ultimate gesture for weddings, golden anniversaries, memorials of passed loved ones, and unforgettable life milestones. A gift that frequently moves recipients to tears of joy.
+            </p>
+            <span class="pillar-accent-tag" data-i18n="pillar_4_tag">Unforgettable Impact</span>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="pillar-card featured-pillar" data-reveal="fade-up" data-delay="400">
+            <div class="pillar-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="pillar-title" data-i18n="pillar_5_title">Attention to Every Detail</h3>
+            <p class="pillar-text" data-i18n="pillar_5_desc">
+              We provide unlimited digital previews and adjustments before shipping. Each artwork arrives with a serial-numbered Certificate of Authenticity signed by the artist.
+            </p>
+            <span class="pillar-accent-tag" data-i18n="pillar_5_tag">100% Happiness Guarantee</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         8. SIZING & PRICING GUIDE
+         ======================================================== -->
+    <section class="pricing-section" id="pricing">
+      <div class="section-container">
+        
+        <div class="section-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="pricing_eyebrow">TRANSPARENT VALUE</p>
+          <h2 class="section-title" data-i18n="pricing_title">Canvas Sizing & Commission Tiers</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="pricing_subtitle">
+            Every portrait is custom-made. Choose the ideal size for your living room, gallery wall, or bedside sanctuary.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- Size 1: Intimate -->
+          <div class="pricing-card" data-reveal="fade-up">
+            <div class="pricing-badge" data-i18n="tier_1_badge">Intimate Gift</div>
+            <h3 class="tier-name" data-i18n="tier_1_name">The Keepsake</h3>
+            <div class="tier-dimensions">12" × 16" <span data-i18n="tier_1_metric">(30 × 40 cm)</span></div>
+            <p class="tier-desc" data-i18n="tier_1_desc">Perfect for bedside tables, intimate study nooks, or solo portrait gifts.</p>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">280</span>
+              <span class="terms">USD</span>
+            </div>
+            <ul class="tier-perks">
+              <li data-i18n="tier_1_p1">Up to 2 subjects</li>
+              <li data-i18n="tier_1_p2">Choice of Oil or Watercolor</li>
+              <li data-i18n="tier_1_p3">Belgian Stretched Linen</li>
+              <li data-i18n="tier_1_p4">Unlimited digital revisions</li>
+              <li data-i18n="tier_1_p5">Signed Certificate of Authenticity</li>
+            </ul>
+            <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I'm%20interested%20in%20The%20Keepsake%20(12x16)%20portrait." target="_blank" rel="noopener noreferrer" class="tier-cta-btn" data-i18n="tier_select_btn">Select This Size</a>
+          </div>
+
+          <!-- Size 2: Classic (Featured) -->
+          <div class="pricing-card popular" data-reveal="fade-up" data-delay="100">
+            <div class="popular-ribbon" data-i18n="popular_ribbon">Most Cherished</div>
+            <div class="pricing-badge" data-i18n="tier_2_badge">Classic Statement</div>
+            <h3 class="tier-name" data-i18n="tier_2_name">The Heirloom</h3>
+            <div class="tier-dimensions">20" × 28" <span data-i18n="tier_2_metric">(50 × 70 cm)</span></div>
+            <p class="tier-desc" data-i18n="tier_2_desc">Our most popular size for romantic couples, wedding memories, and master bedrooms.</p>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">460</span>
+              <span class="terms">USD</span>
+            </div>
+            <ul class="tier-perks">
+              <li data-i18n="tier_2_p1">Up to 3 subjects</li>
+              <li data-i18n="tier_2_p2">Choice of Oil, Watercolor, or Acrylic</li>
+              <li data-i18n="tier_2_p3">Deep 1.5" Gallery Stretched Linen</li>
+              <li data-i18n="tier_2_p4">Complimentary Luxury Frame Option</li>
+              <li data-i18n="tier_2_p5">Unlimited digital revisions</li>
+              <li data-i18n="tier_2_p6">Insured worldwide express shipping</li>
+            </ul>
+            <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I'm%20interested%20in%20The%20Heirloom%20(20x28)%20portrait." target="_blank" rel="noopener noreferrer" class="tier-cta-btn" data-i18n="tier_select_btn">Select This Size</a>
+          </div>
+
+          <!-- Size 3: Grand Salon -->
+          <div class="pricing-card" data-reveal="fade-up" data-delay="200">
+            <div class="pricing-badge" data-i18n="tier_3_badge">Grand Salon</div>
+            <h3 class="tier-name" data-i18n="tier_3_name">The Estate</h3>
+            <div class="tier-dimensions">30" × 40" <span data-i18n="tier_3_metric">(75 × 100 cm)</span></div>
+            <p class="tier-desc" data-i18n="tier_3_desc">Magnificent centerpiece designed for prominent living room walls and multi-subject family gatherings.</p>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">790</span>
+              <span class="terms">USD</span>
+            </div>
+            <ul class="tier-perks">
+              <li data-i18n="tier_3_p1">Up to 5 subjects</li>
+              <li data-i18n="tier_3_p2">Museum-grade Oil with heavy impasto</li>
+              <li data-i18n="tier_3_p3">Custom Handcrafted Solid Wood Frame</li>
+              <li data-i18n="tier_3_p4">Composite photo arrangement included</li>
+              <li data-i18n="tier_3_p5">White-glove priority packaging</li>
+              <li data-i18n="tier_3_p6">Dedicated Senior Master Artist</li>
+            </ul>
+            <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I'm%20interested%20in%20The%20Estate%20(30x40)%20portrait." target="_blank" rel="noopener noreferrer" class="tier-cta-btn" data-i18n="tier_select_btn">Select This Size</a>
+          </div>
+
+        </div>
+
+        <div class="custom-size-note text-center" data-reveal="fade-up">
+          <p><span data-i18n="custom_size_text">Need a custom dimension or a multi-panel gallery set?</span> <a href="#custom-portrait" class="inline-link" data-i18n="custom_size_link">Inquire for custom dimensions up to 60" × 80"</a>.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         9. TESTIMONIALS (Stories from Collectors)
+         ======================================================== -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="section-container">
+        
+        <div class="section-header text-center" data-reveal="fade-up">
+          <p class="section-eyebrow" data-i18n="test_eyebrow">COLLECTOR VOICES</p>
+          <h2 class="section-title" data-i18n="test_title">Stories Painted With Love</h2>
+          <div class="title-brush-divider"></div>
+          <p class="section-subtitle" data-i18n="test_subtitle">
+            Read heartfelt reactions from customers who trusted Lover Paint to turn their most intimate memories into enduring treasures.
+          </p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="testimonial-carousel-wrap" data-reveal="fade-up">
+          
+          <div class="testimonial-cards-track" id="testimonialTrack">
+
+            <!-- Review 1 -->
+            <div class="testimonial-slide active">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <div class="stars-row">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="review_1_text">
+                  "I commissioned an oil painting of our wedding photo for our 10th anniversary. When my wife unwrapped it, she burst into tears. The texture of the paint, the way the light reflects in her eyes—it holds an emotional soul that a photo print could never match. Lover Paint exceeded every dream."
+                </p>
+                <div class="collector-profile">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Eleanor Vance" class="collector-avatar">
+                  <div class="collector-meta">
+                    <h4 class="collector-name" data-i18n="review_1_author">Eleanor & David Vance</h4>
+                    <span class="collector-commission" data-i18n="review_1_sub">Commission: 24" × 36" Oil on Linen • Verified Collector</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <div class="stars-row">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="review_2_text">
+                  "My grandfather passed away before our daughter was born. The artist at Lover Paint combined two separate photos into one seamless painting of him holding his great-granddaughter. It hangs in our living room and feels like a miraculous moment that was brought to life."
+                </p>
+                <div class="collector-profile">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Thorne" class="collector-avatar">
+                  <div class="collector-meta">
+                    <h4 class="collector-name" data-i18n="review_2_author">Marcus Thorne</h4>
+                    <span class="collector-commission" data-i18n="review_2_sub">Commission: 20" × 28" Memorial Oil • Verified Collector</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <div class="stars-row">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="review_3_text">
+                  "The watercolor we ordered for our parents' Golden Anniversary was stunning. The process was so easy—the team sent updates at every step, listened to our small feedback notes about colors, and delivered the canvas in a velvet presentation box. Absolutely world-class."
+                </p>
+                <div class="collector-profile">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Sophia Chen" class="collector-avatar">
+                  <div class="collector-meta">
+                    <h4 class="collector-name" data-i18n="review_3_author">Sophia & Liam Chen</h4>
+                    <span class="collector-commission" data-i18n="review_3_sub">Commission: 18" × 24" Watercolor on Arches • Verified Collector</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-nav-bar">
+            <button class="carousel-arrow prev-btn" id="prevTestimonial" aria-label="Previous review">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+            <button class="carousel-arrow next-btn" id="nextTestimonial" aria-label="Next review">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         10. FINAL CALL TO ACTION (Emotional Closing)
+         ======================================================== -->
+    <section class="final-cta-section" id="final-cta">
+      
+      <!-- Atmospheric Backdrop Art Frame -->
+      <div class="cta-backdrop-image"></div>
+      <div class="cta-backdrop-vignette"></div>
+
+      <div class="section-container">
+        <div class="final-cta-content text-center" data-reveal="fade-up">
+          
+          <div class="cta-brand-emblem">
+            <img src="assets/logo.png" alt="Lover Paint Emblem" class="cta-mini-logo">
+          </div>
+
+          <h2 class="final-cta-headline">
+            <span data-i18n="cta_headline_1">Some Moments Deserve</span> <br>
+            <span class="serif-italics" data-i18n="cta_headline_2">More Than a Photo.</span>
+          </h2>
+
+          <p class="final-cta-subtext" data-i18n="cta_subtext">
+            Let us turn your favorite memories into something you can keep forever. 
+            Handcrafted with love, cherished through generations.
+          </p>
+
+          <div class="final-cta-buttons">
+            <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I'd%20love%20to%20create%20my%20custom%20painting.%20Please%20let%20me%20know%20how%20to%20begin!" target="_blank" rel="noopener noreferrer" class="btn-primary-large" id="finalCtaWhatsappBtn">
+              <span data-i18n="cta_btn_primary">Create Your Custom Painting</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <button class="btn-secondary-large" id="footerOpenInquiryBtn" type="button">
+              <span data-i18n="cta_btn_consult">Request Artist Consultation</span>
+            </button>
+          </div>
+
+          <div class="final-cta-perks">
+            <span data-i18n="perk_hand">✨ 100% Hand-Painted</span>
+            <span class="bullet">•</span>
+            <span data-i18n="perk_canvas">🖼️ Museum Stretched Canvas</span>
+            <span class="bullet">•</span>
+            <span data-i18n="perk_ship">🌍 Insured Worldwide Delivery</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================
+       11. FOOTER
+       ======================================================== -->
+  <footer class="luxury-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-logo-link">
+            <img src="assets/logo.png" alt="Lover Paint" class="footer-logo-img">
+            <div class="footer-brand-title">
+              <span class="name">Lover Paint</span>
+              <span class="tag" data-i18n="intro_sub">Paint Your Memories</span>
+            </div>
+          </a>
+          <p class="footer-bio" data-i18n="footer_bio">
+            An independent fine art atelier dedicated to translating personal photographic moments into timeless, hand-painted museum-grade oil and watercolor heirlooms.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Lover Paint Instagram" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Lover Paint Facebook" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://wa.me/15550192834" target="_blank" rel="noopener noreferrer" aria-label="Lover Paint WhatsApp" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Lover Paint Pinterest" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line><circle cx="12" cy="12" r="10"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links: Gallery Collections -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading" data-i18n="footer_collections">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#gallery" data-i18n="filter_couples">Couples & Romance</a></li>
+            <li><a href="#gallery" data-i18n="filter_family">Generational Family</a></li>
+            <li><a href="#gallery" data-i18n="filter_portraits">Solo & Legacy Portraits</a></li>
+            <li><a href="#gallery" data-i18n="filter_watercolor">Delicate Watercolors</a></li>
+            <li><a href="#gallery" data-i18n="filter_canvas">Canvas Impasto Art</a></li>
+            <li><a href="#gallery" data-i18n="filter_gifts">Anniversary Custom Gifts</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Atelier & Services -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading" data-i18n="footer_atelier">Atelier</h4>
+          <ul class="footer-links">
+            <li><a href="#custom-portrait" data-i18n="nav_custom">Custom Portrait Service</a></li>
+            <li><a href="#process" data-i18n="nav_process">Our 4-Step Process</a></li>
+            <li><a href="#pricing" data-i18n="nav_pricing">Sizing & Price List</a></li>
+            <li><a href="#why-us" data-i18n="nav_why">Linen & Pigment Standards</a></li>
+            <li><a href="#testimonials" data-i18n="nav_stories">Collector Reviews</a></li>
+            <li><a href="#introOverlay" id="footerReplayIntro" data-i18n="mobile_replay_intro">Replay Cinematic Intro</a></li>
+          </ul>
+        </div>
+
+        <!-- Atelier Concierge -->
+        <div class="footer-links-col footer-contact-col">
+          <h4 class="footer-heading" data-i18n="footer_concierge">Direct Concierge</h4>
+          <p class="concierge-text" data-i18n="concierge_sub">Have a question regarding custom portraits, sizing, or photo combination?</p>
+          <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint%20Concierge" target="_blank" rel="noopener noreferrer" class="footer-concierge-btn">
+            <span data-i18n="btn_concierge">WhatsApp Artist Concierge</span>
+          </a>
+          <div class="atelier-hours">
+            <span data-i18n="studio_hours">Studio Hours: Mon - Sat • 9am - 8pm CET</span>
+            <span data-i18n="worldwide_ship">Worldwide Insured Shipping</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> <strong>Lover Paint</strong> <span data-i18n="copyright_rights">Fine Art Atelier. All rights reserved.</span>
+        </p>
+        <p class="tagline-sub" data-i18n="intro_sub">Paint Your Memories.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================================
+       12. FULLSCREEN ART LIGHTBOX MODAL
+       ======================================================== -->
+  <div class="lightbox-modal" id="artworkLightbox" aria-hidden="true" role="dialog" aria-label="Artwork Detail View">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    
+    <div class="lightbox-wrapper">
+      
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <button class="lightbox-nav-btn prev" id="lightboxPrevBtn" aria-label="Previous artwork">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="lightbox-content">
+        <div class="lightbox-frame-wrap">
+          <img src="" alt="Enlarged Artwork" class="lightbox-image" id="lightboxImg">
+          <div class="lightbox-zoom-hint" data-i18n="lightbox_zoom_hint">Click image to toggle zoom</div>
+        </div>
+        
+        <div class="lightbox-meta">
+          <div class="lightbox-category-badge" id="lightboxCategory">Couples</div>
+          <h3 class="lightbox-title" id="lightboxTitle">Artwork Title</h3>
+          <p class="lightbox-spec" id="lightboxSpec">Oil on Belgian Linen</p>
+          <p class="lightbox-desc" id="lightboxDesc">Artwork description narrative goes here.</p>
+          
+          <div class="lightbox-actions">
+            <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I%20love%20the%20style%20of%20this%20artwork." target="_blank" rel="noopener noreferrer" class="lightbox-commission-btn" id="lightboxCommissionLink">
+              <span data-i18n="lightbox_commission_btn">Commission Similar Painting</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button class="lightbox-nav-btn next" id="lightboxNextBtn" aria-label="Next artwork">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       13. CUSTOM PORTRAIT INQUIRY & MOCKUP MODAL
+       ======================================================== -->
+  <div class="inquiry-modal" id="inquiryModal" aria-hidden="true" role="dialog" aria-label="Custom Painting Inquiry Form">
+    <div class="inquiry-backdrop" id="inquiryBackdrop"></div>
+    
+    <div class="inquiry-dialog">
+      <button class="inquiry-close-btn" id="inquiryCloseBtn" aria-label="Close dialog">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="inquiry-header text-center">
+        <img src="assets/logo.png" alt="Lover Paint" class="modal-logo-small">
+        <h3 data-i18n="modal_title">Begin Your Custom Painting</h3>
+        <p data-i18n="modal_sub">Tell us about the memory you wish to paint. We will prepare style recommendations and a tailored estimate.</p>
+      </div>
+
+      <form class="inquiry-form" id="customInquiryForm">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName" data-i18n="modal_name_label">Your Name</label>
+            <input type="text" id="clientName" placeholder="e.g. Julian Hayes" data-i18n-ph="modal_name_ph" required>
+          </div>
+          <div class="form-group">
+            <label for="clientPhone" data-i18n="modal_phone_label">WhatsApp / Phone</label>
+            <input type="tel" id="clientPhone" placeholder="e.g. +1 555 123 4567" data-i18n-ph="modal_phone_ph" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="artStyleSelect" data-i18n="modal_style_label">Preferred Art Style</label>
+            <select id="artStyleSelect">
+              <option value="Classic Oil on Canvas" data-i18n="modal_style_oil">Classic Oil on Canvas (Rich & Textured)</option>
+              <option value="Fine Art Watercolor" data-i18n="modal_style_wc">Fine Art Watercolor (Soft & Luminous)</option>
+              <option value="Modern Acrylic Palette Knife" data-i18n="modal_style_acrylic">Modern Acrylic Palette Knife (Bold Impasto)</option>
+              <option value="Vintage Charcoal & Gold" data-i18n="modal_style_charcoal">Vintage Charcoal & Gold Accents</option>
+              <option value="Need Artist Recommendation" data-i18n="modal_style_recommend">I Need Artist Recommendation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subjectCount" data-i18n="modal_subjects_label">Number of Subjects</label>
+            <select id="subjectCount">
+              <option value="1 Subject (Solo Portrait)" data-i18n="modal_subj_1">1 Subject (Solo)</option>
+              <option value="2 Subjects (Couple)" data-i18n="modal_subj_2" selected>2 Subjects (Couple)</option>
+              <option value="3-4 Subjects (Family)" data-i18n="modal_subj_3">3-4 Subjects (Family)</option>
+              <option value="5+ Subjects (Extended Family)" data-i18n="modal_subj_5">5+ Subjects (Extended Family)</option>
+              <option value="Beloved Pet or Pet & Owner" data-i18n="modal_subj_pet">Beloved Pet or Pet & Owner</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="preferredSize" data-i18n="modal_size_label">Approximate Desired Size</label>
+          <select id="preferredSize">
+            <option value="The Keepsake (12x16 in)" data-i18n="modal_size_1">The Keepsake — 12" × 16"</option>
+            <option value="The Heirloom (20x28 in)" data-i18n="modal_size_2" selected>The Heirloom — 20" × 28" (Most Popular)</option>
+            <option value="The Estate (30x40 in)" data-i18n="modal_size_3">The Estate — 30" × 40" (Grand Wall Centerpiece)</option>
+            <option value="Custom Size Needed" data-i18n="modal_size_custom">Custom Dimension</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="memoryStory" data-i18n="modal_story_label">Tell Us About the Memory (Optional)</label>
+          <textarea id="memoryStory" rows="3" placeholder="Tell us about the occasion (anniversary, wedding, memorial, birthday) or special details you'd like our painter to focus on..." data-i18n-ph="modal_story_ph"></textarea>
+        </div>
+
+        <button type="submit" class="submit-inquiry-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 1.838.815 2.791.815 3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.767-5.768-5.767zm0 10.422c-.868 0-1.636-.242-2.348-.689l-.168-.106-1.577.414.421-1.538-.114-.183c-.512-.816-.782-1.639-.781-2.554.001-2.569 2.09-4.658 4.66-4.658 2.568 0 4.658 2.089 4.658 4.658 0 2.57-2.09 4.658-4.658 4.658zm7.969-4.656c0 4.418-3.582 8-8 8-1.408 0-2.733-.365-3.882-1.002l-4.118 1.08 1.1-4.017c-.707-1.189-1.1-2.57-1.1-4.061 0-4.418 3.582-8 8-8s8 3.582 8 8z"/>
+          </svg>
+          <span data-i18n="modal_submit_btn">Send Details to WhatsApp Atelier</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Quick-Action Bar / WhatsApp FAB -->
+  <div class="mobile-floating-actions" id="mobileFloatingActions">
+    <a href="https://wa.me/15550192834?text=Hello%20Lover%20Paint!%20I'd%20love%20to%20turn%20my%20photo%20into%20a%20hand-painted%20masterpiece." target="_blank" rel="noopener noreferrer" class="mobile-fab-whatsapp" aria-label="Contact Lover Paint on WhatsApp">
+      <div class="fab-pulse"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 1.838.815 2.791.815 3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.767-5.768-5.767zm0 10.422c-.868 0-1.636-.242-2.348-.689l-.168-.106-1.577.414.421-1.538-.114-.183c-.512-.816-.782-1.639-.781-2.554.001-2.569 2.09-4.658 4.66-4.658 2.568 0 4.658 2.089 4.658 4.658 0 2.57-2.09 4.658-4.658 4.658zm7.969-4.656c0 4.418-3.582 8-8 8-1.408 0-2.733-.365-3.882-1.002l-4.118 1.08 1.1-4.017c-.707-1.189-1.1-2.57-1.1-4.061 0-4.418 3.582-8 8-8s8 3.582 8 8z"/>
+      </svg>
+      <span class="fab-label" data-i18n="fab_chat">Chat with Atelier</span>
+    </a>
+  </div>
+
+  <!-- JavaScript Application -->
+  <script src="script.js"></script>
+</body>
+</html>
